@@ -1,0 +1,113 @@
+<head><link rel="stylesheet" href="{{ asset('css/navbar.css')}}">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	<script src="app.js" defer></script>
+</head>
+<!-- Navbar -->
+<style>
+	nav {
+		position: relative;
+		/*background: black;*/
+	}
+
+	.nav-item {
+		font-size: 1.4vw;
+	}
+
+	.plus {
+		font-size: 1.5vw;
+		color: grey;
+	}
+
+	.plus:hover {
+		font-size: 1.5vw;
+		color: white;
+	}
+
+	.down {
+		padding-top: 0.5vw;
+	}
+
+	.icon_admin {
+
+		display: inline-block;
+		float: right;
+		font-family: 'Source Sans Pro', sans-serif;
+		margin-left: 35vw;
+		position: relative;
+		font-size: 22px !important;
+
+
+		/*position: absolute;
+		right: 0;
+		display: flex;
+		gap: 30px;
+		flex-direction: row;
+		text-transform: uppercase;
+		color: yellow;*/
+	}
+</style>
+
+<!-- transition navbar -->
+<nav
+	class="navbar fixed-top navbar-expand-lg navbar-dark shadow-5-strong">
+	<!-- Container wrapper -->
+	<div
+		class="container-fluid">
+		<!-- Navbar brand -->
+		<a class="navbar-brand" href="{{ path('home') }}"></a>
+
+		<!-- Collapsible wrapper -->
+		<div
+			class="collapse navbar-collapse" id="navbarSupportedContent">
+			<!-- Left links -->
+			<ul class="navbar-nav me-auto mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="{{ path('home') }}">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('association') }}">L'association</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Actualités</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Activités</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Nous Rejoindre</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Contact</a>
+				</li>
+				<!-- Navbar dropdown -->
+				<li class="down">
+					<a class="nav-item  plus" href="#" data-toggle="dropdown">
+						+
+					</a>
+					<!-- Dropdown menu -->
+					<ul class="dropdown show">
+						<li class="dropdown-menu">
+							<a class="dropdown-item" href="#">Galerie</a>
+							<a class="dropdown-item" href="#">Blog</a>
+							<a class="dropdown-item" href="#">Nos Partenaires</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class=" nav-item icon_admin">
+					<a class="nav-link" href="#">
+						<i class="bi bi-person "></i>
+					</a>
+				</li>
+
+
+			</ul>
+			<!-- Left links -->
+		</div>
+		<!-- Collapsible wrapper -->
+	</div>
+	<!-- Container wrapper -->
+</nav>
+
+
+<!-- transition navbar -->

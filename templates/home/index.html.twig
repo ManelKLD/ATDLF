@@ -1,0 +1,495 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ATDLF
+{% endblock %}
+
+
+{% block body %}
+
+	<!--Police-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Righteous&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="{{ asset('css/index.css')}}">
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.banner-image {
+			width: 100%;
+			height: 100vh;
+			background-image: url('/img/homepage/home_bg_dark.jpg');
+			background-size: cover;
+			background-position: center;
+		}
+
+		#banner-title {
+			font-family: 'Righteous', cursive;
+			color: white;
+			font-size: 8vw;
+			padding-top: 30vw;
+			animation: apparition 3s ease-out;
+		}
+
+		#banner-text {
+			font-family: 'Source Sans Pro', sans-serif;
+			color: white;
+			font-size: 1.7vw;
+			padding-top: 25, 1%;
+		}
+
+		.container {
+			width: 100%;
+			height: 100vh;
+		}
+
+		.c2 {
+			width: 100%;
+			height: 80vh;
+		}
+
+
+		.Icon {
+			width: 100%;
+			height: 120vh;
+		}
+
+		#hp-title {
+			font-family: 'Source Sans Pro', sans-serif;
+			color: #606060;
+			font-size: 2.7vw;
+		}
+
+		#hp-title1 {
+			font-family: 'Source Sans Pro', sans-serif;
+			color: #606060;
+			font-size: 5vw;
+		}
+
+		#plus {
+			background-color: #d43f3a;
+			align: center;
+			color: white;
+			border: none;
+			font-size: 100%;
+
+		}
+
+		.center {
+			text-align: center;
+		}
+
+		.square {
+			width: 30vw;
+			height: 35vw;
+			background: #fec63d;
+			border-radius: 15%;
+			position: absolute;
+			right: 1%;
+		}
+
+		.description {
+			width: 30vw;
+			height: 30vw;
+			color: black;
+			background: white;
+			border: 0.2em solid black;
+			position: absolute;
+			border-radius: 15%;
+			right: 20%;
+			top: 20%;
+		}
+
+		.desc-text {
+			color: #606060;
+			font-size: 1.15vw;
+			font-family: 'Source Sans Pro', 'light';
+			margin: 2%;
+			text-align: justify;
+		}
+
+		.right {
+			position: relative;
+		}
+
+		.wrap {
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.btnPlus {
+			min-width: 50%;
+			min-height: 30%;
+			font-family: 'Nunito', sans-serif;
+			font-size: 22px;
+			text-transform: uppercase;
+			letter-spacing: 1.3px;
+			font-weight: 700;
+			color: #313133;
+			background: #d9534f;
+			background: linear-gradient(90deg, rgba(240, 128, 128) 0%, rgba(240, 128, 128) 100%);
+			border: none;
+			border-radius: 1000px;
+			box-shadow: 12px 12px 24px rgba(240, 128, 128);
+			transition: all 0.3s ease-in-out 0s;
+			cursor: pointer;
+			outline: none;
+			position: relative;
+			padding: 3%;
+			margin: auto;
+		}
+
+		.btnPlus::before {
+			content: '';
+			border-radius: 100px;
+			min-width: calc(105%);
+			min-height: calc(115%);
+			border: 6px solid #d9534f;
+			box-shadow: 0 0 60px rgba(240, 128, 128);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			opacity: 0;
+			transition: all 0.3s ease-in-out 0s;
+		}
+
+		.btnPlus:hover,
+		.btnPlus:focus {
+			color: #313133;
+			transform: translateY(-6px);
+		}
+
+		.btnPlus:hover::before,
+		.btnPlus:focus::before {
+			opacity: 1;
+		}
+
+		.btnPlus::after {
+			content: '';
+			width: 30px;
+			height: 30px;
+			border-radius: 100%;
+			border: 6px solid #d9534f;
+			position: absolute;
+			z-index: -1;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			animation: ring 1.5s infinite;
+		}
+
+		.btnPlus:hover::after,
+		.btnPlus:focus::after {
+			animation: none;
+			display: none;
+		}
+
+		hr {
+			margin-top: -5%;
+			margin-left: 5%;
+			margin-right: 5%;
+		}
+
+		.actionIcon {
+			style: none;
+		}
+
+		.iconColor {
+			width: 15vw;
+		}
+
+
+		.iconColor2 {
+			width: 80%;
+		}
+
+		#marginIcon {
+			margin-top: 5em;
+			position: relative;
+		}
+
+		#marginIcon2 {
+			margin-top: -5%;
+		}
+
+		.p-0 {
+			margin: 5%;
+		}
+
+		.title-part {
+			font-size: 3vw;
+			font-family: 'Lato', sans-serif;
+			text-align: center;
+			margin-top: 2.5%;
+
+		}
+
+		@keyframes apparition {
+			from {
+				opacity: 0;
+				transform: translateY(-100px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0px);
+			}
+		}
+
+		.text-part {
+			font-size: 100%;
+			font-family: 'Lato', sans-serif;
+			text-align: center;
+			margin-top: 1%;
+		}
+
+		.ideaBox {
+			width: 20%;
+			display: block;
+			margin: 5% auto 0;
+		}
+
+		.btnIdea {
+
+			display: block;
+			margin: 5% auto 0;
+			size: 20%;
+			background: #ffc107;
+			color: white;
+			padding: 1% 2%;
+			font-size: 1.5em;
+
+		}
+
+		.btnIdea:hover {
+			color: white;
+			background: none;
+			color: #ffc107;
+		}
+
+		.iconColor:hover,
+		.iconColor:focus {
+			transform: translateY(-6px);
+		}
+
+		.iconColor2:hover,
+		.iconColor2:focus {
+			transform: translateY(-6px);
+		}
+
+		.map {
+			width: 50vw;
+			display: block;
+			margin: 1vw auto 0;
+		}
+
+		#Bigmap {
+			width: 300%;
+			height: 300%;
+		}
+
+		.date {
+			font-size: 1em;
+			margin: 1em;
+			font-family: 'Lato', sans-serif;
+		}
+
+		li {
+			list-style-type: none;
+			margin-left: 1.5vw;
+		}
+
+		.text-center {
+			text-align: center;
+		}
+
+		::-webkit-scrollbar {
+			width: 0;
+		}
+
+		.footer-img {
+			width: 60vw;
+		}
+
+		.footer-illustration {
+			text-align: center;
+		}
+
+		.cI {
+			text-align: center;
+		}
+	</style>
+	<!-- HTML Image-->
+
+	<div id="scrollbar"></div>
+	<div id="scrollpath"></div>
+
+	<div class="banner-image" w-100 vh-100 d-flex justify-content-center align-items-center>
+
+		<div class="container">
+			<div class="content text-center">
+				<h1 id="banner-title">
+					Au'Tours de la Famille</h1>
+				<h2 id="banner-text">Bienvenue sur notre site, l'association Au'Tours de la Famille vous souhaite la bienvenue</h2>
+			</div>
+		</div>
+	</div>
+
+	<!-- Corps de la homepage-->
+	<div class="homepage" id="homepage">
+
+		<div
+			class="container d-grid">
+			<!-- premier paragraphe -->
+			<div class="p-0">
+				<div class="row">
+					<div class="col-4 mt-2 pt-9">
+						<p class="text-justify mt-5 mb-5" id="hp-title1">
+							Découvrez notre association
+						</p>
+						<div class='center'>
+							<div class='wrap'>
+								<Button href="" class=" btnPlus" id="plus">
+									En savoir +
+								</Button>
+							</div>
+						</div>
+					</div>
+					<div class="col-4" id="right"></div>
+					<!-- Carte de visite -->
+					<div class="col-4 mt-5">
+						<div class="square"></div>
+						<div class="description"></br>
+						<p class="desc-text">Lorem Ipsum dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="container Icon cI">
+
+
+		<div class="row" id="lineIcon">
+			<div class="col-3">
+				<a class="actionIcon" href=""><img class="iconColor" src="/img/iconHome/devenirBenevole.png"/></a>
+			</div>
+			<div class="col-3" id="marginIcon">
+				<a class="actionIcon" href=""><img class="iconColor" src="/img/iconHome/nousContacter.png"/>
+				</div>
+				<div class="col-3">
+					<a class="actionIcon" href=""><img class="iconColor" src="/img/iconHome/ouNousTrouver.png"/>
+					</div>
+
+					<div class="col-3" id="marginIcon">
+						<a class="actionIcon" href=""><img class="iconColor" src="/img/iconHome/calendrier.png"/>
+						</div>
+					</div>
+
+
+					<div class="row" id="marginIcon2">
+						<div class="col-3">
+							<a class="actionIcon" href=""><img class="iconColor" src="/img/iconHome/blog.png"/></a>
+						</div>
+						<div class="col-3" id="marginIcon">
+							<a class="actionIcon" href=""><img class="iconColor" src="/img/iconHome/galerie.png"/>
+							</div>
+							<div class="col-3" id="">
+								<a class="actionIcon" href=""><img class="iconColor" src="/img/iconHome/boiteAidee.png"/>
+								</div>
+
+								<div class="col-3" id="marginIcon">
+									<a class="actionIcon" href=""><img class="iconColor" src="/img/iconHome/adhesion.png"/>
+									</div>
+								</div>
+
+
+								<div class="row" id="marginIcon2">
+									<div class="col-3">
+										<a class="actionIcon" href=""><img class="iconColor2" src="/img/iconHome/bonPlan.png"/></a>
+									</div>
+									<div class="col-3" id="marginIcon"></div>
+									<div class="col-3">
+										<a class="actionIcon" href=""><img class="iconColor2" src="/img/iconHome/activites.png"/></a>
+									</div>
+
+									<div class="col-3" id="marginIcon"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+
+					<div class="container">
+
+						<h3 class="title-part">Découvrez nos actions en photos</h3>
+						<p class="text-part">Lorem Ipsum dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+
+					</div>
+					<hr>
+					<div class="bgImage">
+						<div class="container">
+
+							<h3 class="title-part">Une idée, un projet ? La boite à idée</h3>
+							<p class="text-part">Lorem Ipsum dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+							<img class="ideaBox" src="/img/iconHome/boxIdea.png"/>
+							<button type="button" class="btn btn-outline-warning btnIdea">J'ai une idée !</button>
+						</div>
+					</div>
+					<hr>
+					<div class="container">
+						<h3 class="title-part">Nos horizons</h3>
+						<p class="text-part">Lorem Ipsum dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+						<img class="map" src="/img/homePage/carte.PNG"/></div>
+
+					<hr>
+
+					<div class="container c2">
+						<div class="row">
+							<div class="col-6">
+								<h3 class="title-part" id="hp-title">Nous sommes ici, venez-nous rendre visite !</h3>
+
+								<span class="date"></br>
+								<p>Nos horaires...</p>
+								<li>Le Lundi de 17h à 19h</li>
+								<li>Le Mardi de 17h à 19h</li>
+								<li>Le Mercredi de 9h45 à 12h15 et de 13h à 19h</li>
+								<li>Le Jeudi de 14h à 19h</li>
+								<li>Le Vendredi de 17h à 19h</li>
+								<li>Le Samedi de 9h45 à 12h15 et de 16h à 19h</li>
+								<li>Le Dimache de 15h à 19h</li>
+							</span>
+						</br>
+						<p class="text-center">7 Allée de l'Adjudant Foiny, Tours, 37 000, France</p>
+						<p class="text-center">Entrée face à l'école primaire Claude Bernard</p>
+
+					</div>
+					<div class="col-2">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10806.477308582544!2d0.6923787697753906!3d47.38034780000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47fcd431991971d5%3A0xb3c4d6e2aed25696!2s7%20All.%20de%20l&#39;Adjudant%20Foiny%2C%2037000%20Tours!5e0!3m2!1sfr!2sfr!4v1653828881480!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="footer-illustration"><img class="footer-img" src="/img/homepage/footer-img.jpg"/></div>
+
+		</div>
+	{% endblock %}

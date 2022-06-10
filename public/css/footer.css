@@ -1,0 +1,26 @@
+footer {
+    width: 100%;
+    height: 40%;
+    color: white;
+}
+
+
+.social-media {
+    color: white;
+}
+
+.rounded-circle {
+    background-color: white;
+}
+
+.social-media:hover {
+    color: black;
+}
+
+.rounded-circle {
+    background-color: black;
+}
+
+a:hover {
+    text-decoration: none;
+}

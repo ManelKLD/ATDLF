@@ -1,0 +1,306 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.banner-image {
+	width: 100%;
+	height: 100vh;
+	background-image: url('/img/homepage/home_bg_dark.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+#banner-title {
+	font-family: 'Righteous', cursive;
+	color: white;
+	font-size: 8vw;
+	padding-top: 30vw;
+	animation: apparition 3s ease-out;
+}
+
+#banner-text {
+	font-family: 'Source Sans Pro', sans-serif;
+	color: white;
+	font-size: 1.7vw;
+	padding-top: 25, 1%;
+}
+
+.container {
+	width: 100%;
+	height: 100vh;
+}
+
+
+.Icon {
+	width: 100%;
+	height: 120vh;
+}
+
+#hp-title {
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #606060;
+	font-size: 2.7vw;
+}
+
+#hp-title1 {
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #606060;
+	font-size: 5vw;
+}
+
+#plus {
+	background-color: #d43f3a;
+	align: center;
+	color: white;
+	border: none;
+	font-size: 100%;
+
+}
+
+.center {
+	text-align: center;
+}
+
+.square {
+	width: 30vw;
+	height: 35vw;
+	background: #fec63d;
+	border-radius: 15%;
+	position: absolute;
+	right: 1%;
+}
+
+.description {
+	width: 30vw;
+	height: 30vw;
+	color: black;
+	background: white;
+	border: 0.2em solid black;
+	position: absolute;
+	border-radius: 15%;
+	right: 20%;
+	top: 20%;
+}
+
+.desc-text {
+	color: #606060;
+	font-size: 1.15vw;
+	font-family: 'Source Sans Pro', 'light';
+	margin: 2%;
+	text-align: justify;
+}
+
+.right {
+	position: relative;
+}
+
+.wrap {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.btnPlus {
+	min-width: 50%;
+	min-height: 30%;
+	font-family: 'Nunito', sans-serif;
+	font-size: 22px;
+	text-transform: uppercase;
+	letter-spacing: 1.3px;
+	font-weight: 700;
+	color: #313133;
+	background: #d9534f;
+	background: linear-gradient(90deg, rgba(240, 128, 128) 0%, rgba(240, 128, 128) 100%);
+	border: none;
+	border-radius: 1000px;
+	box-shadow: 12px 12px 24px rgba(240, 128, 128);
+	transition: all 0.3s ease-in-out 0s;
+	cursor: pointer;
+	outline: none;
+	position: relative;
+	padding: 3%;
+	margin: auto;
+}
+
+.btnPlus::before {
+	content: '';
+	border-radius: 100px;
+	min-width: calc(105%);
+	min-height: calc(115%);
+	border: 6px solid #d9534f;
+	box-shadow: 0 0 60px rgba(240, 128, 128);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	transition: all 0.3s ease-in-out 0s;
+}
+
+.btnPlus:hover,
+.btnPlus:focus {
+	color: #313133;
+	transform: translateY(-6px);
+}
+
+.btnPlus:hover::before,
+.btnPlus:focus::before {
+	opacity: 1;
+}
+
+.btnPlus::after {
+	content: '';
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	border: 6px solid #d9534f;
+	position: absolute;
+	z-index: -1;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: ring 1.5s infinite;
+}
+
+.btnPlus:hover::after,
+.btnPlus:focus::after {
+	animation: none;
+	display: none;
+}
+
+hr {
+	margin-top: -5%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.actionIcon {
+	style: none;
+}
+
+.iconColor {
+	width: 15vw;
+}
+
+
+.iconColor2 {
+	width: 80%;
+}
+
+#marginIcon {
+	margin-top: 5em;
+	position: relative;
+}
+
+#marginIcon2 {
+	margin-top: -5%;
+}
+
+.p-0 {
+	margin: 5%;
+}
+
+.title-part {
+	font-size: 3vw;
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+	margin-top: 2.5%;
+
+}
+
+@keyframes apparition {
+	from {
+		opacity: 0;
+		transform: translateY(-100px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+.text-part {
+	font-size: 100%;
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+	margin-top: 1%;
+}
+
+.ideaBox {
+	width: 20%;
+	display: block;
+	margin: 5% auto 0;
+}
+
+.btnIdea {
+
+	display: block;
+	margin: 5% auto 0;
+	size: 20%;
+	background: #ffc107;
+	color: white;
+	padding: 1% 2%;
+	font-size: 1.5em;
+
+}
+
+.btnIdea:hover {
+	color: white;
+	background: none;
+	color: #ffc107;
+}
+
+.iconColor:hover,
+.iconColor:focus {
+	transform: translateY(-6px);
+}
+
+.iconColor2:hover,
+.iconColor2:focus {
+	transform: translateY(-6px);
+}
+
+.map {
+	width: 50vw;
+	display: block;
+	margin: 1vw auto 0;
+}
+
+#Bigmap {
+	width: 300%;
+	height: 300%;
+}
+
+.date {
+	font-size: 1em;
+	margin: 1em;
+	font-family: 'Lato', sans-serif;
+}
+
+li {
+	list-style-type: none;
+	margin-left: 1.5vw;
+}
+
+.text-center {
+	text-align: center;
+}
+
+::-webkit-scrollbar {
+	width: 0;
+}
+
+.footer-img {
+	width: 70vw;
+}
+
+.footer-illustration {
+	text-align: center;
+}
+
+.cI {
+	text-align: center;
+}
