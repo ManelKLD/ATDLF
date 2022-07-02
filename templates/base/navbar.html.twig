@@ -62,7 +62,7 @@
 			<!-- Left links -->
 			<ul class="navbar-nav me-auto mb-lg-0">
 				<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="{{ path('home') }}">Home</a>
+					<a class="nav-link active" aria-current="page" href="{{ path('home') }}">Accueil</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{{ path('association') }}">L'association</a>
@@ -74,10 +74,10 @@
 					<a class="nav-link" href="#">Activités</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Nous Rejoindre</a>
+					<a class="nav-link" href="{{ path('joinus') }}">Nous Rejoindre</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Contact</a>
+					<a class="nav-link" href="{{ path('contact') }}">Contact</a>
 				</li>
 				<!-- Navbar dropdown -->
 				<li class="down">
@@ -87,9 +87,9 @@
 					<!-- Dropdown menu -->
 					<ul class="dropdown show">
 						<li class="dropdown-menu">
-							<a class="dropdown-item" href="#">Galerie</a>
+							<a class="dropdown-item" href="{{ path('galery') }}">Galerie</a>
 							<a class="dropdown-item" href="#">Blog</a>
-							<a class="dropdown-item" href="#">Nos Partenaires</a>
+							<a class="dropdown-item" href="{{ path('partenaires') }}">Nos Partenaires</a>
 						</li>
 					</ul>
 				</li>

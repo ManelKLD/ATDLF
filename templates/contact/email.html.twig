@@ -1,0 +1,65 @@
+{% apply inline_css %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTDXHTML1.0Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<style>
+	body {
+		background: url("\img\contact\bg_mail.jpg");
+	}
+</style>
+
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<link rel="stylesheet" href="{{ asset('css/emailcontact.css')}}">
+
+	</head>
+	<body class="bg-light">
+		<div class="container">
+			<div class="card my-5">
+				<div class="card-body">
+
+
+					<center class="wrapper">
+
+						<table class="main" width="100%">
+							<h1>Demande de Contact</h1>
+							<table class="informations">
+								<tr>
+									<td>
+										<b>Email</b>
+									</td>
+									<td>{{Expediteur}}</td>
+								</tr>
+								<tr>
+									<td>
+										<b>Nom</b>
+									</td>
+									<td>{{Nom}}</td>
+								</tr>
+								<tr>
+									<td>
+										<b>Prenom</b>
+									</td>
+									<td>{{Prenom}}</td>
+								</tr>
+								<tr>
+									<td>Telephone</td>
+									<td>{{Telephone}}</td>
+								</tr>
+								<tr>
+									<td>Type de Projet</td>
+									<td>{{TypedeProjet}}</td>
+								</tr>
+
+
+								<td>Message</td>
+								<td>{{Message}}</td>
+							</tr>
+						</table>
+					</table>
+				</center>
+			</div>
+		</div>
+	</body>
+</html></div></body></html>{% endapply %}

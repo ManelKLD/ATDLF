@@ -1,0 +1,129 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Rejoingez-nous
+{% endblock %}
+
+
+{% block body %}
+
+	<div class="row">
+		<div class="col-sm left">
+			<div class="content_bloc">
+				<div class="title">Je veux devenir membre !</div>
+				<div>Pour bénéficier des différentes activités qui nous organisons, il vous faudra d'abord adhérer à notre organisme. Cette adhésion s'élève à
+					<b>12€</b>
+					par an.
+					<br>
+					Les bénévoles ne sont pas concernés.
+					<br>
+					Nous vous conseillons de prendre rendez-vous en appelant le numero suivant
+					<span class="marks">"</span>
+					07 62 96 32 42
+					<span class="marks">"</span>
+					. Notre secrétaire vous accueillera et vous fournira la fiche d'adhésion à remplir ainsi que le droit à l'image.
+																																			                    Une fois les frais d'adhésion exhaunéré, vous serez intégrer au groupe Whats'App regrouppant l'ensemble de la famille. Vous serez alors tenu au courrant de l'ensemble des et pourrez directement interagir.
+				</div>
+
+			</div>
+		</div>
+
+
+		<div class="col-sm right">
+			<div class="content_bloc">
+				<div class="title" style="color:#e5d9e0;">Je veux Aider !</div>
+				<br>
+				<div class="txt">Afin de nous faire part de votre volonté de devenir bénévole, veuillez renseigner les champs ci dessous du formualaire.
+				</div>
+				<div class="content_form">
+					{{ form_start(joinUs_form) }}
+
+					<div class="row">
+						<div class="col-sm">
+							<div class="form-group">
+
+								{{ form_row(joinUs_form.Nom, {'attr': {'class': 'form-control'}}) }}
+							</div>
+							<div class="form-group">
+								{{ form_row(joinUs_form.Email, {'attr': {'class': 'form-control'}}) }}
+
+							</div>
+						</div>
+
+						<div class="col-sm">
+							<div class="form-group">
+								{{ form_row(joinUs_form.Prenom, {'attr': {'class': 'form-control'}}) }}
+
+							</div>
+							<div class="form-group">
+								{{ form_row(joinUs_form.Telephone, {'attr': {'class': 'form-control'}}) }}
+
+							</div>
+
+						</div>
+					</div>
+
+					<div class="form-group">
+						{{ form_row(joinUs_form.Message, {'attr': {'class': 'form-control'}}) }}
+
+					</div>
+
+					<div class="row text-center">
+						<div class="form-group col-sm ">
+							{{ form_row(joinUs_form.Envoyer, {'attr': {'class': 'btn btn-outline'}}) }}
+						</div>
+
+						<div class="form-group col-sm" style="btn:hover:color:yellow;">
+							{{ form_row(joinUs_form.Vider, {'attr': {'class': 'btn btn-outline'}}) }}</div>
+
+					</div>
+					{{ form_end(joinUs_form) }}
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<style>
+		.left {
+			background-color: #e5d9e0;
+			margin-bottom: -7%;
+			z-index: -1;
+
+		}
+
+		.right {
+			background-color: black;
+			margin-bottom: -7%;
+
+		}
+		.content_bloc {
+			padding: 5%;
+			height: 115vh;
+		}
+
+		.title {
+			margin-top: 8%;
+			font-family: "Righteous", cursive;
+			font-size: 2em;
+			text-align: center;
+		}
+
+		.txt {
+			text-align: center;
+			color: white;
+			margin-bottom: 5%;
+
+		}
+
+		.content_form {
+			color: #e5d9e0;
+			z-index: 2;
+		}
+		.form_group {
+			z-index: 0;
+		}
+		.btn:hover {
+			background-color: #e5d9e0;
+		}
+		.marks {}
+	</style>
+{% endblock %}

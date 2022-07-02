@@ -1,0 +1,115 @@
+{% block title %}{% endblock %}
+
+{% block body %}
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Righteous&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+
+
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<style>
+
+				.menu {
+					font-size: 30px;
+					cursor: pointer;
+					margin-right: 5px;
+					z-index: 1;
+
+				}
+				body {
+					font-family: 'Righteous', cursive
+				}
+
+
+				.sidenav {
+					height: 100%;
+					width: 0;
+					position: fixed;
+					z-index: 1;
+					top: 0;
+					left: 0;
+					background-color: #111;
+					overflow-x: hidden;
+					transition: 0.5s;
+					padding-top: 60px;
+				}
+
+				.sidenav a {
+					padding: 8px 8px 8px 32px;
+					text-decoration: none;
+					font-size: 1.5vw;
+					color: #818181;
+					display: block;
+					transition: 0.3s;
+					font-family: 'Righteous', cursive
+				}
+
+				.sidenav a:hover {
+					color: #f1f1f1;
+				}
+
+				.sidenav .closebtn {
+					position: absolute;
+					top: 0;
+					right: 25px;
+					font-size: 36px;
+					margin-left: 90px;
+				}
+
+
+				@media screen and(max-height: 450px) {
+					.sidenav {
+						padding-top: 15px;
+					}
+					.sidenav a {
+						font-size: 18px;
+					}
+				}
+				.logo {
+					height: 7vw;
+					text-align: center;
+					display: block;
+					margin: 2vw auto 0;
+				}
+			</style>
+		</head>
+		<body>
+			<nav class="navbar fixed-top navbar-expand-lg " style="background-color:white;">
+				<div id="mySidenav" class="sidenav">
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+					<a class="nav-link" href="{{ path('home') }}">Accueil</a>
+					<a class="nav-link" href="{{ path('association') }}">L'association</a>
+					<a class="nav-link" href="">Actualités</a>
+					<a class="nav-link" href="">Activités</a>
+					<a class="nav-link" href="{{ path('joinus') }}">Nous Rejoindre</a>
+					<a class="nav-link" href="{{ path('contact') }}">Contact</a>
+					<a class="nav-link" href="{{ path('galery') }}">Galerie</a>
+					<a class="nav-link" href="">Blog</a>
+					<a class="nav-link" href="{{ path('partenaires') }}">Nos Partenaires</a>
+					{#<img class="logo" src="/img/logo_autours_de_la_famille_blanc_couleur.png"/>#}
+
+				</body>
+			</body>
+		</body>
+	</html>
+</div>
+<div class="icon_sidenavbar">
+	<span class="menu" style="float: right;" onclick="openNav()">&#9776;</span>
+</div>
+<div style="font-family: 'Righteous', cursive; font-size:1.7em;">Menu</div>
+<script>
+	function openNav() {
+document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+document.getElementById("mySidenav").style.width = "0";
+}
+</script>&nbsp;</nav></body><style>.class {
+		font-family: 'Righteous', cursive;
+	}
+
+	.icon_sidenavbar {
+		float: right;
+	}</style></html>{% endblock %}

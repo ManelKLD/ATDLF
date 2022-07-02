@@ -13,7 +13,7 @@ class AssociationController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('association/index.html.twig', [
+        return $this->render('association/association.html.twig', [
             'controller_name' => 'AssociationController',
         ]);
     }
