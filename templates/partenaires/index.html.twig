@@ -4,11 +4,104 @@
 {% endblock %}
 
 {% block body %}
-	<link rel="stylesheet" href="{{ asset('css/index.css')}}">
 
-	<div>
-		<h1>Ils nous soutiennent !</h1>
+	<link rel="stylesheet" href="{{ asset('css/partenaires.css')}}">
+
+	<div class="content">
+
+
+		<div class="row" style="margin-top:6%; border-radius:15%;">
+			<div class="col-8" style="background-color:black;">
+				<p class="title">Ils nous soutiennent !</p>
+			</div>
+			<div class="col-4" style="background-color:white;"><br><br><br><br><br><br><br><br><br><br><br><br></div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-4" style="background-color:;"><br><br><br><br><br><br><br><br><br><br><br><br></div>
+			<div class="col-4" style="background-color:#f6e1e2;"></div>
+			<div class="col-4" style="background-color:#f6e1e2;"><img class="img_right" style="width:60vh; margin-top:10%;" src="/img/partenaires/tours.png" alt=""></div>
+		</div>
+
+		<div class="row">
+			<div class="col-4" style="background-color:#2f2d45"><img class="img_left" style="width:20vh;" src="/img/partenaires/cdc.png" alt=""></div>
+			<div class="col-4" style="background-color:#2f2d45"></div>
+			<div class="col-4" style="background-color:white;"><br><br><br><br><br><br><br><br><br><br><br><br></div>
+		</div>
+
+		<div class="row" style="background-bottom: 10%;">
+			<div class="col-4" style="background-color:white;"><br><br><br><br><br><br><br><br><br><br><br><br></div>
+			<div class="col-4" style="background-color:black"></div>
+			<div class="col-4" style="background-color:black"><img class="img_right" style="width:40%;" src="/img/partenaires/fb.png" alt=""></div>
+		</div>
+
+		<div class="row">
+			<div class="col-4" style="background-color:#e3e4ec;"><img class="img_left" style="width:35vh" src="/img/partenaires/plriel.png" alt=""></div>
+			<div class="col-4" style="background-color:#e3e4ec;"></div>
+			<div class="col-4" style="background-color:white;"><br><br><br><br><br><br><br><br><br><br><br><br></div>
+		</div>
+
+		<div class="row">
+			<div class="col-4" style="background-color:;"><br><br><br><br><br><br><br><br><br><br><br><br></div>
+			<div class="col-4" style="background-color:#f6e1e2;"></div>
+			<div class="col-4" style="background-color:#f6e1e2;"><img class="img_right" style="width:80vh;" src="/img/partenaires/th.png" alt=""></div>
+		</div>
+
+		<div class="row">
+			<div class="col-4" style="background-color:#2f2d45"><img class="img_left" style="width:30vh;" src="/img/partenaires/ccas.png" alt=""></div>
+			<div class="col-4" style="background-color:#2f2d45"><img class="img_right" src="/img/partenaires/t" alt=""></div>
+			<div class="col-4" style="background-color:white;"><br><br><br><br><br><br><br><br><br><br><br><br></div>
+		</div>
+
+		<div class="row" style="background-bottom: 10%;">
+			<div class="col-4" style="background-color:white;"><br><br><br><br><br><br><br><br><br><br><br><br></div>
+			<div class="col-4" style="background-color:black"></div>
+			<div class="col-4" style="background-color:black"><img class="img_left" style="width:30vh;" src="/img/partenaires/regis.png" alt=""></div>
+		</div>
+
+		<div class="row">
+			<div class="col-4" style="background-color:#e3e4ec;"><img class="img_right" src="/img/partenaires/spf.png" alt=""></div>
+			<div class="col-4" style="background-color:#e3e4ec;"></div>
+			<div class="col-4" style="background-color:white;"><br><br><br><br><br><br><br><br><br><br><br><br></div>
+		</div>
+
+		<div class="row">
+			<div class="col" style="background-color:white;"></div>
+		</div>
 	</div>
 
 
+	<style>
+
+		.row {
+			margin-top: 2%;
+		}
+
+
+		.col-sm {
+			width: 10vh;
+		}
+		.title {
+			font-size: 4em;
+			font-family: "Righteous", cursive;
+			color: white;
+			margin-top: 6%;
+			text-align: center;
+		}
+
+		.img_right {
+			margin-top: 5%;
+			margin-right: 30%;
+			float: right;
+			vertical-align: middle;
+		}
+
+		.img_left {
+			margin-top: 5%;
+			margin-left: 30%;
+			float: left;
+			vertical-align: middle;
+		}
+	</style>
 {% endblock %}

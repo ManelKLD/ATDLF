@@ -28,8 +28,23 @@
 			}
 
 			.header {
+				background-image: url('/img/homepage/home_bat_bg.jpg');
+				background-repeat: no-repeat;
+				background-size: cover;
+				height: 70vh;
+				padding-top: 15%;
+			}
+			.title {
+				padding-top: 15%;
+				margin: 0 auto;
+			}
+
+			.title-det {
+				color: white;
+				font-family: "Righteous", cursive;
+				font-size: 9em;
+				background-color: black;
 				text-align: center;
-				padding: 32px;
 			}
 
 			.row {
@@ -40,67 +55,84 @@
 				padding: 0 4px;
 			}
 
-			/* Create four equal columns that sits next to each other */
-			.column {
-				-ms-flex: 25%; /* IE10 */
-				flex: 25%;
-				max-width: 25%;
-				padding: 0 4px;
-			}
 
-			.column img {
-				margin-top: 8px;
-				vertical-align: middle;
-				width: 100%;
-			}
+			img:hover {
 
-			/* Responsive layout - makes a two column-layout instead of four columns */
-			@media screen and(max-width: 800px) {
-				.column {
-					-ms-flex: 50%;
-					flex: 50%;
-					max-width: 50%;
-				}
-			}
-
-			/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-			@media screen and(max-width: 600px) {
-				.column {
-					-ms-flex: 100%;
-					flex: 100%;
-					max-width: 100%;
-				}
+				transform: scale(1.05);
+				z-index: 2;
 			}
 		</style>
 		<body>
 
 			<!-- Header -->
-			<div class="header">
-				<h1>Responsive Image Grid</h1>
-				<p>Resize the browser window to see the responsive effect.</p>
+			<div class=" row header">
+				<div class="col-4"></div>
+				<div class="col-4">
+					<div class="title">
+						<p class="title-det">Galerie</p>
+					</div>
+				</div>
+				<div class="col-4"></div>
+
+
 			</div>
 
 			<!-- Photo Grid -->
+			<br><br>
 			<div class="row">
-				<div class="column">
-					<img src="/img/homepage/home_bat_bg.jpg" style="width:100%">
-					<img src="/img/homepage/home_bat_bg.jpg" style="width:100%">
-				</div>
-				<div class="column">
-					<img src="/img/homepage/home_bat_bg.jpg" style="width:100%">
-					<img src="/img/homepage/home_bat_bg.jpg" style="width:100%">
-				</div>
-				<div class="column">
-					<img src="/img/homepage/home_bat_bg.jpg" style="width:100%">
-					<img src="/img/homepage/home_bat_bg.jpg" style="width:100%">
-				</div>
-				<div class="column">
-					<img src="/img/homepage/home_bat_bg.jpg" style="width:100%">
-					<img src="/img/homepage/home_bat_bg.jpg" style="width:100%">
-				</div>
+				<img class="col-1" style="" src="" alt="">
+				<img class="col-5" style="" src="/img/galery/gal.jpg" alt="">
+				<img class="col-5" style="background-color:black;" src="" alt="">
+				<img class="col-1" style="" src="" alt="">
+
 			</div>
+
+			<div class="row">
+				<img class="col-1" style="" src="" alt="">
+				<img class="col-5" style="background-color:black;" src="" alt="">
+				<img class="col-5" style="" src="/img/galery/gal.jpg" alt="">
+				<img class="col-1" style="" src="" alt="">
+
+			</div>
+
+			<div class="row">
+				<img class="col-1" style="" src="" alt="">
+				<img class="col-5" style="" src="/img/galery/gal.jpg" alt="">
+				<img class="col-5" style="background-color:black;" src="" alt="">
+				<img class="col-1" style="" src="" alt="">
+
+			</div>
+
+			<div class="row">
+				<img class="col-1" style="" src="" alt="">
+				<img class="col-5" style="background-color:black;" src="" alt="">
+				<img class="col-5" style="" src="/img/galery/gal.jpg" alt="">
+				<img class="col-1" style="" src="" alt="">
+
+			</div>
+			<div class="row">
+				<img class="col-1" style="" src="" alt="">
+				<img class="col-5" style="" src="/img/galery/gal.jpg" alt="">
+				<img class="col-5" style="background-color:black;" src="" alt="">
+				<img class="col-1" style="" src="" alt="">
+
+			</div>
+			<div class="row">
+				<img class="col-1" style="" src="" alt="">
+				<img class="col-5" style="background-color:black;" src="" alt="">
+				<img class="col-5" style="" src="/img/galery/gal.jpg" alt="">
+				<img class="col-1" style="" src="" alt="">
+
+			</div>
+			<div class="row">
+				<img class="col-1" style="" src="" alt="">
+				<img class="col-5" style="" src="/img/galery/gal.jpg" alt="">
+				<img class="col-5" style="background-color:black;" src="" alt="">
+				<img class="col-1" style="" src="" alt="">
+
+			</div>
+
 
 		</body>
 	</html>
-
 {% endblock %}
